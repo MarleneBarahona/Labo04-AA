@@ -44,7 +44,7 @@ void printArray(int arr[], int size){
     cout << endl;
 }
 /*Funcion para el mising number*/
-void misingNumber(int a[], int n){
+int misingNumber(int a[], int n){
     int aux = a[n];
     //cout << aux;
     if(aux%2 == 0){
@@ -52,13 +52,14 @@ void misingNumber(int a[], int n){
     }else {
         aux = aux +1;
     }
-    cout << "mising number: "<< aux << endl;
+    //return aux;
+    cout << "Mising number: "<< aux << endl;
 }
-int pedirArray(){
+int pedirArray(int cant){
     int n;
     cout << "Ingrese la cantidad de datos ";
     cin >> n;
-    int a[n];
+    int a[n], b[cant], j=0;
     cout << "Ingrese los datos ";
     for(int i=0; i<n; i++){
         cin >> a[i];
@@ -69,18 +70,25 @@ int pedirArray(){
     cout << "Sorted array: \n";
     printArray(a, n);
     misingNumber(a,n-1);
-    //return a;
+    //int c = misingNumber(a,n-1);
+    //b[j] = misingNumber(a,n-1);
+    //j++;
+    //return b;
 }
 
 // Código principal para utilizarlo
 int main(){
     int cant, i=0;
+    //int b[cant];
     cout << "Ingrese la cantidad de arreglos ";
     cin >> cant;
     while(i<cant){
-        pedirArray();
+        //pedirArray();
+        pedirArray(cant);
+        //b[i] = pedirArray();
         i++;
         //cout << "----";
     }
+    //printArray(b,cant);
     return 0;
 }
